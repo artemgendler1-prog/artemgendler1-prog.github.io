@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Артём Гендлер — тренер</title>
+<meta name="description" content="Индивидуальное ведение, разбор техники по видео, консультации по программе. Биомеханика и обоснование каждого решения. Санкт-Петербург и онлайн.">
+<meta name="theme-color" content="#121110">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #121110;
+    --surface: #1b1a18;
+    --line: #2c2a27;
+    --text: #efe9df;
+    --muted: #a39c91;
+    --accent: #f0a93b;
+    --display: "Unbounded", "Arial Black", system-ui, sans-serif;
+    --body: "Golos Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 20px;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  section:first-of-type { border-top: 0; }
+
+  .label {
+    font-family: var(--display);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 20px;
+  }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.15; margin: 0; }
+  h1 { font-size: clamp(34px, 9vw, 58px); letter-spacing: -.01em; }
+  h2 { font-size: clamp(26px, 6.4vw, 38px); margin-bottom: 24px; }
+  h3 { font-size: 20px; font-weight: 500; margin-bottom: 8px; }
+  p { margin: 0 0 18px; }
+  p:last-child { margin-bottom: 0; }
+  .lead { font-size: clamp(21px, 5vw, 25px); color: var(--text); }
+  .muted { color: var(--muted); }
+  em { font-style: normal; color: var(--accent); }
+
+  /* Шкала — три бара разной заполненности */
+  .scale { display: grid; gap: 7px; width: 64px; margin-bottom: 36px; }
+  .scale span { height: 7px; background: var(--line); border-radius: 2px; position: relative; overflow: hidden; }
+  .scale span::after { content: ""; position: absolute; inset: 0; background: var(--accent); }
+  .scale span:nth-child(1)::after { right: 20%; }
+  .scale span:nth-child(2)::after { right: 55%; }
+  .scale span:nth-child(3)::after { right: 35%; }
+
+  .hero { padding-top: 48px; padding-bottom: 64px; }
+  .who { font-size: 17px; color: var(--muted); margin: 0 0 28px; }
+  .who b { color: var(--text); font-weight: 600; }
+  .hero .lead { margin-top: 28px; }
+
+  .not-for {
+    margin-top: 28px;
+    padding: 20px 22px;
+    border-left: 3px solid var(--line);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 18px;
+  }
+
+  .services { display: grid; gap: 14px; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 22px 24px;
+  }
+  .card p { color: var(--muted); font-size: 18px; }
+
+  .why { font-family: var(--display); font-size: clamp(22px, 5.6vw, 30px); font-weight: 500; line-height: 1.35; margin: 0 0 28px; }
+  .why span { display: block; }
+  .example {
+    margin-top: 28px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  .example .label { margin-bottom: 12px; }
+
+  .facts { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; font-size: 18px; }
+  .facts li { padding-left: 22px; position: relative; }
+  .facts li::before { content: ""; position: absolute; left: 0; top: .7em; width: 10px; height: 2px; background: var(--accent); }
+
+  .cta { padding-bottom: 72px; }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 28px;
+    padding: 20px 24px;
+    min-height: 64px;
+    background: var(--accent);
+    color: #1a1204;
+    border-radius: 10px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 19px;
+    text-decoration: none;
+  }
+  .btn:hover { filter: brightness(1.06); }
+  .btn:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  .btn small { font-family: var(--body); font-weight: 500; font-size: 16px; opacity: .8; }
+
+  footer { padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+
+  @media (min-width: 640px) {
+    body { font-size: 21px; }
+    section { padding: 80px 0; }
+    .hero { padding-top: 88px; }
+    .services { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <section class="hero">
+    <div class="scale" aria-hidden="true"><span></span><span></span><span></span></div>
+    <p class="who"><b>Артём Гендлер</b> · тренер · Санкт-Петербург и онлайн</p>
+    <h1>Ты уже делаешь работу. Давай разберёмся, почему она не даёт того, что обещали.</h1>
+    <p class="lead">Объясняю, почему упражнение работает, и показываю, где оно перестаёт работать. Каждое решение в программе можно проверить — и оно не рассыплется.</p>
+  </section>
+
+  <section>
+    <p class="label">Кому</p>
+    <h2>Тем, кто уже тренируется и запутался</h2>
+    <p>Ты ходишь в зал регулярно. Сменил пару тренеров, прочитал десяток блогеров, и каждый уверенно говорит своё. Советы противоречат друг другу, а результата, который обещали, так и нет.</p>
+    <p>Мотивация тебе не нужна, её у тебя хватает. Нужен тот, за кем можно перестать перепроверять.</p>
+    <div class="not-for">Если ты ещё не начал или ждёшь, что абонемент сработает сам, — это не ко мне.</div>
+  </section>
+
+  <section>
+    <p class="label">Что делаю</p>
+    <h2>Четыре формата</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Индивидуальное ведение</h3>
+        <p>Очно в Санкт-Петербурге или онлайн. Программа под тебя, твою жизнь и твой график, с корректировкой по ходу.</p>
+      </div>
+      <div class="card">
+        <h3>Разбор техники по видео</h3>
+        <p>Присылаешь видео подхода. Разбираю движение: что работает, что мешает и что поменять.</p>
+      </div>
+      <div class="card">
+        <h3>Консультация по программе</h3>
+        <p>У тебя уже есть программа. Смотрим, что в ней на своём месте, а что стоит там по инерции.</p>
+      </div>
+      <div class="card">
+        <h3>Уроки: тренинг и питание</h3>
+        <p>База, на которой держатся все остальные решения. Чтобы ты сам видел, где совет верный, а где он заканчивается.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Чем отличаюсь</p>
+    <p class="why">
+      <span>Почему это упражнение.</span>
+      <span>Почему этот хват.</span>
+      <span><em>Почему этот объём.</em></span>
+    </p>
+    <p>Я работаю через биомеханику и разбор движения. Блогер даёт тезис. Я даю область, где тезис работает, и точку, где он ломается.</p>
+    <p>На каждое решение в твоей программе у меня есть ответ «почему». Спроси — объясню. Проверь — выдержит.</p>
+    <div class="example">
+      <p class="label">Например</p>
+      <p>Подход в отказ — точный способ убедиться, что ты добрал стимул. Но если лупить в отказ каждый подход, либо не вывезешь тренировку целиком, либо просядут следующие на неделе. Где твоя граница, считаем под тебя.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Кто я</p>
+    <ul class="facts">
+      <li>Чемпион Санкт-Петербурга в категории «Атлетический бодибилдинг»</li>
+      <li>Читаю лекции по биомеханике и гипертрофии в фитнес-школе</li>
+      <li>Обучения: N1 Education, J3 University, Physical Education, Body Coach</li>
+      <li>Очно — зал Spirit Fitness, Санкт-Петербург</li>
+    </ul>
+  </section>
+
+  <section class="cta">
+    <p class="label">Куда дальше</p>
+    <h2>Начни с Telegram</h2>
+    <p>Там разборы, объяснения и запись на работу. Посмотри, как я думаю, и реши сам.</p>
+    <a class="btn" href="https://t.me/one1lover" target="_blank" rel="noopener">
+      <span>Telegram</span>
+      <small>@one1lover →</small>
+    </a>
+  </section>
+
+</main>
+<footer>
+  <div class="wrap">Артём Гендлер · тренер · Санкт-Петербург и онлайн</div>
+</footer>
+</body>
+</html>
